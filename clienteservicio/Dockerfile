@@ -5,10 +5,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia el jar del proyecto al contenedor
-COPY target/microservicio-cliente.jar microservicio-cliente.jar
+COPY target/clienteservicio-0.0.1-SNAPSHOT.jar app.jar
 
 # Expone el puerto 8080 para acceso externo
 EXPOSE 8080
 
 # Define el comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "microservicio-cliente.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
