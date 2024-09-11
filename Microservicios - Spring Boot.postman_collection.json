@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "991c3384-bf0e-4113-9780-5e2856aeca95",
+		"name": "Microservicios - Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25118984",
+		"_collection_link": "https://warped-shadow-328300.postman.co/workspace/5fdaeabf-51f9-45b3-885c-ad2ce1576ef7/collection/25118984-991c3384-bf0e-4113-9780-5e2856aeca95?action=share&source=collection_link&creator=25118984"
+	},
+	"item": [
+		{
+			"name": "clienteservicio",
+			"item": [
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Nombre del cliente\",\n  \"genero\": \"Masculino\",\n  \"edad\": 25,\n  \"identificacion\": \"ID1234523423\",\n  \"direccion\": \"Direccion de prueba\",\n  \"telefono\": \"123456789\",\n  \"contraseña\": \"password\",\n  \"estado\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Nombre Actualizado\",\n  \"genero\": \"Femenino\",\n  \"edad\": 30,\n  \"identificacion\": \"ID54321\",\n  \"direccion\": \"Nueva Direccion\",\n  \"telefono\": \"987654321\",\n  \"contraseña\": \"newpassword\",\n  \"estado\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/clientes/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuentaservicio",
+			"item": [
+				{
+					"name": "Crear Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroCuenta\": \"123489\",\n  \"tipoCuenta\": \"Ahorro\",\n  \"saldoInicial\": 5000.00,\n  \"estado\": true,\n  \"clienteId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Cuenta por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/cuentas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las Cuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numeroCuenta\": \"123456789\",\n  \"tipoCuenta\": \"Corriente\",\n  \"saldoInicial\": 10000.00,\n  \"estado\": false,\n  \"clienteId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/cuentas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8081/cuentas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cuentaId\": 1,\n  \"valor\": 100.00,\n  \"tipoMovimiento\": \"Deposito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Movimiento por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/movimientos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Movimiento por Cuenta",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Movimiento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8081/movimientos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Generar Reporte",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/reportes?clienteId=1&fechaInicio=2024-01-01T00:00:00&fechaFin=2024-12-31T23:59:59",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "1"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "2024-01-01T00:00:00"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2024-12-31T23:59:59"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
